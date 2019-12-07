@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">ArchMvpApp</string>
+
+    <string name="input_field_A_text">Input A:</string>
+    <string name="input_field_B_text">Input B:</string>
+    <string name="input_add_button_text">A + B = </string>
+    <string name="input_result_text">Result:</string>
+
+</resources>
+
