@@ -14,5 +14,8 @@ interface MainContract {
 
     interface MainPresenter {
         fun calculateResult(inputA: String, inputB: String)
+        fun isViewBounded(): Boolean
+        fun unBindView()
+        fun bindView(view: MainContract.MainView)
     }
 }

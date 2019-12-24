@@ -7,9 +7,9 @@ package com.example.archmvpapp
  * The presenter is responsible for handeling changes in the UI
  *
  */
-class MainPresenter(
-    private val view: MainContract.MainView
-) : MainContract.MainPresenter {
+class MainPresenter : MainContract.MainPresenter {
+
+    private var mView: MainContract.MainView? = null
 
     override fun calculateResult(inputA: String, inputB: String) {
         val result = inputA.toDoubleOrNull()?.let { safeInputA ->
@@ -18,7 +18,16 @@ class MainPresenter(
             }
         } ?: "Nothing"
 
-        view.showCalculatedResult(result)
+        mView?.showCalculatedResult(result)
     }
 
+    override fun isViewBounded(): Boolean = mView != null
+
+    override fun unBindView() {
+        mView = null
+    }
+
+    override fun bindView(view: MainContract.MainView) {
+        mView = view
+    }
 }

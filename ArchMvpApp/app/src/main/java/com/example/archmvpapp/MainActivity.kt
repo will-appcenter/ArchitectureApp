@@ -21,7 +21,8 @@ class MainActivity : AppCompatActivity(), MainContract.MainView {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        presenter = MainPresenter(this)
+        presenter = MainPresenter()
+        presenter.bindView(this)
 
         binding.buttonAdd.setOnClickListener {
             presenter.calculateResult(
@@ -29,6 +30,14 @@ class MainActivity : AppCompatActivity(), MainContract.MainView {
                 binding.inputBEditText.text.toString()
             )
         }
+    }
+
+    override fun onDestroy() {
+        if(presenter.isViewBounded()) {
+            presenter.unBindView()
+        }
+
+        super.onDestroy()
     }
 
     override fun showCalculatedResult(result: String) {
