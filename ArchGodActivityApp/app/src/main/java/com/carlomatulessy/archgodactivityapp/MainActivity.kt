@@ -4,6 +4,11 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.carlomatulessy.archgodactivityapp.databinding.ActivityMainBinding
 
+/**
+ * Created by Carlo Matulessy on ${DATE}.
+ * Copyright © ${YEAR} Carlo Matulessy. All rights reserved.
+ *
+ */
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
