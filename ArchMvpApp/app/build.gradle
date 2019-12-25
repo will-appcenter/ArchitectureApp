@@ -7,11 +7,11 @@ android {
     compileSdkVersion 29
     buildToolsVersion "29.0.2"
     defaultConfig {
-        applicationId "com.carlomatulessy.archgodactivityapp"
+        applicationId "com.carlomatulessy.archgodactivityapp.mvp.app"
         minSdkVersion 28
         targetSdkVersion 29
-        versionCode 1
-        versionName "1.0"
+        versionCode 100
+        versionName "100.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
